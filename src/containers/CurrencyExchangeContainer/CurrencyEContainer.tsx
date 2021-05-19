@@ -8,8 +8,8 @@ import {
     ChangeCurrentCurrencyAC,
     CurrencyReducersTypes
 } from '../../redux/actions';
-import {connect, ConnectedProps, useDispatch, useSelector} from 'react-redux';
-import { selectAllValues } from '../../redux/selectors';
+import {useDispatch, useSelector} from 'react-redux';
+import {selectAllValues} from '../../redux/selectors';
 
 const CurrencyEContainer: React.FC = () => {
 
@@ -33,6 +33,7 @@ const CurrencyEContainer: React.FC = () => {
     });
 
     const changeCurrencyField = (e: React.ChangeEvent<HTMLInputElement>) => {
+
         let value = e.currentTarget.value;
         if (!isFinite(+value)) return;
         if (e.currentTarget.dataset.currency) {

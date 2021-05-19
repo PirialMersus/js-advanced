@@ -30,11 +30,11 @@ console.log('lesson 2');
 //         return a + b
 //     }
 // }
-function sum1(a: number) {
-    return function (b: number) {
-        return a + b
-    }
-}
+// function sum1(a: number) {
+//     return function (b: number) {
+//         return a + b
+//     }
+// }
 
 // console.log(sum1(3)(6))
 
@@ -48,13 +48,15 @@ function sum1(a: number) {
 // counter(); // 3
 
 // function makeCounter() {
-//     let i = 1
+//     let a = 0
 //     return function (){
-//         return i ++
+//         a ++
+//         return a
 //     }
 //
-//
 // }
+//
+//
 // const counter = makeCounter();
 // console.log(counter())
 // console.log(counter())
@@ -70,31 +72,25 @@ function sum1(a: number) {
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
 
-// function makeCounter(n: number) {
+// function makeCounter(c: number) {
+//     let a = c
 //     return {
-//         increase(){
-//             return ++n
-//         },
-//         decrease(){
-//             return n--
-//         },
-//         reset(){
-//             return n = 0
-//         },
-//         set(b: number){
-//             return n = b
-//         },
+//             increase() { return ++a},
+//             decrease() { return --a},
+//             reset() { return a = 0},
+//             set(b: number) { return a = b}
 //
 //     }
+//
 // }
+
 // const counter1 = makeCounter(0)
-// console.log(counter1.increase())
 // console.log(counter1.increase())
 // console.log(counter1.increase())
 // console.log(counter1.set(6))
 // console.log(counter1.decrease())
 // console.log(counter1.reset())
-// console.log(counter1().decrease)
+// console.log(counter1.decrease())
 // console.log(counter1().log)
 
 
@@ -108,29 +104,49 @@ function sum1(a: number) {
 // 5) superSum(3)(2,5)(3) //10
 // 6) superSum(3)(2,5)(3,9) //10
 
-function superSum(n: number){
-    if (n === 0 ) return 0
-    if (n === 1 ) return (num: number) => num
-    let _arguments: Array<number> = []
+// function superSum(n: number) {
+//     if (n <= 0) {
+//         return 0
+//     }
+//     if (n === 1) return (num: number) => num
+//     let _args: number[] = []
+//     function inner(...args: number[]) {
+//         _args = [..._args, ...args]
+//         if (_args.length >= n){
+//             _args.length = n
+//             return _args.reduce((acc, n) => acc + n)
+//         } else {
+//             return inner
+//         }
+//
+//     }
+//     return inner
+// }
 
-    function helper(...args: Array<number>) {
-        _arguments = [... _arguments, ...args]
-        if(_arguments.length >= n) {
-            _arguments.length = n
-            return _arguments.reduce((acc, number)=> acc + number)
-        } else {
-            return helper
-        }
-    }
-    return helper
-}
 
-console.log(superSum(0))
+// function superSum(n: number){
+//     if (n === 0 ) return 0
+//     if (n === 1 ) return (num: number) => num
+//     let _arguments: Array<number> = []
+//
+//     function helper(...args: Array<number>) {
+//         _arguments = [... _arguments, ...args]
+//         if(_arguments.length >= n) {
+//             _arguments.length = n
+//             return _arguments.reduce((acc, number)=> acc + number)
+//         } else {
+//             return helper
+//         }
+//     }
+//     return helper
+// }
+//
+// console.log(superSum(0))
 //@ts-ignore
-console.log(superSum(3)(2)(5)(3))
+// console.log(superSum(3)(2)(5)(3))
 //@ts-ignore
 
-console.log(superSum(3)(2)(5,3))
+// console.log(superSum(3)(2)(5,3))
 
 
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore

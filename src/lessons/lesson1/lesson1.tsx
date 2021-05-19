@@ -20,6 +20,7 @@ import CurrencyExchangeContainer from '../../containers/CurrencyExchangeContaine
 // https://react-redux.js.org/using-react-redux/connect-mapdispatch
 
 const Lesson1: React.FunctionComponent = () => {
+    console.log("app")
     return (
     <React.Fragment>
         <CurrencyExchangeContainer />
