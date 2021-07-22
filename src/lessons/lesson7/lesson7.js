@@ -40,4 +40,11 @@ function Human(name = 'Human') {
     }
 }
 const human = new Human()
-human.speak()
+// human.speak()
+
+Function.prototype._bind = function (ctx, ...args){
+    const _this = this
+    return function (...args2){
+        return_this.apply(ctx, [...args, ...args2])
+    }
+}

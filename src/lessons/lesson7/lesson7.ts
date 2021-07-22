@@ -88,5 +88,7 @@ const human = new Human()
 // Используя метод Apply реализовать свой собственный метод bind
 
 
+
+
 // just a plug
 export default () => {};
